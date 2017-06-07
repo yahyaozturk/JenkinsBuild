@@ -13,7 +13,7 @@ pipeline {
             echo 'hello Word'
             
           },
-          "Security Analysis": {
+          "Unit Test Execution": {
             echo 'hello Word'
             
           }
