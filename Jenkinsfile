@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''node -v
-npm -v'''
+        echo 'hello Word'
       }
     }
     stage('Static Code Anaysis') {
