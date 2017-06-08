@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'hello Word'
+        sh 'npm install'
       }
     }
     stage('Static Code Anaysis') {
