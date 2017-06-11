@@ -11,7 +11,8 @@ pipeline {
       steps {
         parallel(
           "Static Code Anaysis": {
-            sh './opt/sonar/bin/sonar-scanner'
+            sh 'export PATH=$PATH:/opt/sonar/bin'
+            sh 'sonar-scanner'
             
           },
           "Unit Test Execution": {
