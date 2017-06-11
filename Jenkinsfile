@@ -13,6 +13,7 @@ pipeline {
           "Static Code Anaysis": {
             sh 'export PATH=$PATH:/opt/sonar/bin'
             sh 'sonar-scanner'
+            waitForQualityGate()
             
           },
           "Unit Test Execution": {
