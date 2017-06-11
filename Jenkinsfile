@@ -3,24 +3,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
-        sh 'npm run build'
+        echo 'Hello World'
       }
     }
     stage('Static Code Anaysis') {
       steps {
-        parallel(
-          "Static Code Anaysis": {
-            sh 'export PATH=$PATH:/opt/sonar/bin'
-            sh 'sonar-scanner'
-            waitForQualityGate()
-            
-          },
-          "Unit Test Execution": {
-            echo 'hello Word'
-            
-          }
-        )
+        tool 'SonarQube Default Scanner'
       }
     }
     stage('Deploy to DEV') {
