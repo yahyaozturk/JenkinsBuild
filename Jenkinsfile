@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Static Code Anaysis') {
       steps {
-        tool 'SonarQube Default Scanner'
+        sh 'sonar-scanner'
       }
     }
     stage('Deploy to DEV') {
