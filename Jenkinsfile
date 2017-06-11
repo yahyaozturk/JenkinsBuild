@@ -11,7 +11,7 @@ pipeline {
       steps {
         parallel(
           "Static Code Anaysis": {
-            echo 'hello Word'
+            sh './opt/sonar/bin/sonar-scanner'
             
           },
           "Unit Test Execution": {
