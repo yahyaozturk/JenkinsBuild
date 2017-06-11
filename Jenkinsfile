@@ -7,17 +7,6 @@ pipeline {
         sh 'npm run build'
       }
     }
-stage('SonarQube analysis') {
-      steps {
-        script {
-          // requires SonarQube Scanner 2.8+
-          scannerHome = tool 'SonarQube Default Scanner'
-        }
-        withSonarQubeEnv('Sonar') {
-          sh "${scannerHome}/bin/sonar-scanner"
-        }
-      }
-    }
     stage('Deploy to DEV') {
       steps {
         echo 'hello Word'
