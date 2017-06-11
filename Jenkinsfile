@@ -6,11 +6,13 @@ pipeline {
         echo 'Hello World'
       }
     }
-    stage('SonarQube analysis') { 
-        withSonarQubeEnv('Sonar') { 
-          sh 'sonar-scanner'
-        }
+  stage('SonarQube analysis') {
+    // requires SonarQube Scanner 2.8+
+    def scannerHome = tool 'SonarQube Default Scanner';
+    withSonarQubeEnv('Sonar') {
+      sh "${scannerHome}/bin/sonar-scanner"
     }
+  }
     stage('Deploy to DEV') {
       steps {
         echo 'hello Word'
