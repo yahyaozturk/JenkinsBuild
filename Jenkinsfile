@@ -1,13 +1,19 @@
 pipeline {
   agent any
   stages {
+    stage('Build') {
+      steps {
+        sh 'npm install'
+        sh 'npm run build'
+      }
+    }
     stage('Static Code Anaysis') {
       steps {
         parallel(
           "Static Code Anaysis": {
+            sh 'export PATH=$PATH:/opt/sonar/bin'
             sh 'sonar-scanner'
             waitForQualityGate()
-            tool 'SonarQube Default Scanner'
             
           },
           "Unit Test Execution": {
