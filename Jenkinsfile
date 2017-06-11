@@ -10,9 +10,9 @@ stage('SonarQube analysis') {
       steps {
         script {
           // requires SonarQube Scanner 2.8+
-          scannerHome = tool 'SonarQube Scanner 2.8'
+          scannerHome = tool 'SonarQube Default Scanner'
         }
-        withSonarQubeEnv('SonarQube Scanner') {
+        withSonarQubeEnv('Sonar') {
           sh "${scannerHome}/bin/sonar-scanner"
         }
       }
