@@ -10,6 +10,7 @@ pipeline {
     stage('Deploy to DEV') {
       steps {
         echo 'hello Word'
+        waitForQualityGate()
       }
     }
     stage('Smoke Test') {
