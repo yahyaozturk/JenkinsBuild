@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Static Code Anaysis') {
       steps {
-        sh 'sonar-scanner'
+        waitForQualityGate()
       }
     }
     stage('Deploy to DEV') {
