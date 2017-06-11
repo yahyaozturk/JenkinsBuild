@@ -6,10 +6,10 @@ pipeline {
         echo 'Hello World'
       }
     }
-    stage('Static Code Anaysis') {
-      steps {
-        waitForQualityGate()
-      }
+    stage('SonarQube analysis') { 
+        withSonarQubeEnv('Sonar') { 
+          sh 'sonar-scanner'
+        }
     }
     stage('Deploy to DEV') {
       steps {
