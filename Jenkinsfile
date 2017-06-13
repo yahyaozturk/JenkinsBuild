@@ -1,10 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Deploy to DEV') {
+    sstage('Deploy to DEV') {
       steps {
-        tool 'Docker'
-      }
+         script {
+            dockerHome = tool 'Docker'
+            sh "${dockerHome}/bin/docker version"
+           }
+        }
     }
   }
 }
