@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    sstage('Deploy to DEV') {
+    stage('Deploy to DEV') {
       steps {
          script {
             dockerHome = tool 'Docker'
