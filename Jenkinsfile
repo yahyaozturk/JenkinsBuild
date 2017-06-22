@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Deploy to DEV') {
       steps {
+        tool 'Node'
         sh '''node -v
 npm -v'''
         script {
