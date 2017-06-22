@@ -1,16 +1,17 @@
 pipeline {
   agent any
+      tools {
+        nodejs 'Node'
+    }
   stages {
     stage('Deploy to DEV') {
       steps {
-        tool 'Node'
-        sh '''node -v
-npm -v'''
+        sh 'npm --version'
+        sh 'node --version'
         script {
           dockerHome = tool 'Docker'
           sh "${dockerHome}/bin/docker version"
-        }
-        
+        }        
       }
     }
   }
