@@ -1,8 +1,5 @@
 pipeline {
   agent any
-      tools {
-        nodejs 'Node'
-    }
   stages {
     stage('Deploy to DEV') {
       steps {
@@ -11,8 +8,17 @@ pipeline {
         script {
           dockerHome = tool 'Docker'
           sh "${dockerHome}/bin/docker version"
-        }        
+        }
+        
       }
     }
+    stage('') {
+      steps {
+        junit(testResults: 'test-output', allowEmptyResults: true)
+      }
+    }
+  }
+  tools {
+    nodejs 'Node'
   }
 }
