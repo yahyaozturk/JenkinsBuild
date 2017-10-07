@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>div_Geldii Yer Arama Daire Bak</name>
+   <name>div_Geldii Yer Arama Daire</name>
    <tag></tag>
    <elementGuidId>5ace9e8e-461a-4433-b93b-b619fcfb082a</elementGuidId>
    <useRalativeImagePath>false</useRalativeImagePath>
