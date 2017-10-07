@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description></description>
+   <name>Selenium Example</name>
+   <tag></tag>
+   <UUID>56f2748d-3846-4436-a9d9-887c9d19299e</UUID>
+   <pageLoadTimeout>30</pageLoadTimeout>
+</Project>
